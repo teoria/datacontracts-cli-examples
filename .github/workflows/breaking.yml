@@ -1,0 +1,15 @@
+name: Breaking Changes
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get CLI
+        run: |
+          curl -L https://github.com/datacontract/cli/releases/download/v0.2.0/datacontract-v0.2.0-linux-amd64.tar.gz -o datacontract.tar.gz
+          tar -xf datacontract.tar.gz
+      - name: Check backwards compatibility 
+        run: ./datacontract breaking --with https://raw.githubusercontent.com/datacontract/cli-examples/main/datacontract.yaml
