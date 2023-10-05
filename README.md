@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Get CLI
         run: |
-          curl -L https://github.com/datacontract/cli/releases/download/v0.2.0/datacontract-v0.2.0-linux-amd64.tar.gz -o datacontract.tar.gz
+          curl -L https://github.com/datacontract/cli/releases/download/v0.3.1/datacontract-v0.3.1-linux-amd64.tar.gz -o datacontract.tar.gz
           tar -xf datacontract.tar.gz
       - name: Check backwards compatibility 
         run: ./datacontract breaking --with https://raw.githubusercontent.com/datacontract/cli-examples/main/datacontract.yaml
@@ -29,12 +29,12 @@ Run ./datacontract breaking --with https://raw.githubusercontent.com/datacontrac
 Found 1 differences between the data contracts!
 
 🔴 Difference 1:
-Description:  field 'my_table.my_column_2' was removed
+Description:  field 'my_table.my_column' was removed
 Type:         field-removed
 Severity:     breaking
 Level:        field
 Model:        my_table
-Field:        my_column_2
+Field:        my_column
 Exiting application with error: found breaking differences between the data contracts 
 Error: Process completed with exit code 1.
 ```
