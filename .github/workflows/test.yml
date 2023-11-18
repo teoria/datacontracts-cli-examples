@@ -1,0 +1,21 @@
+name: Quality Checks
+
+on: [pull_request]
+
+jobs:
+  qualityChecks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Set up Soda Core
+        run: pip install -U soda-core-duckdb
+      - name: Get CLI
+        run: |
+          curl -L https://github.com/datacontract/cli/releases/download/v0.4.0/datacontract-v0.4.0-linux-amd64.tar.gz -o datacontract.tar.gz
+          tar -xf datacontract.tar.gz
+      - name: Check data quality
+        run: ./datacontract test --soda-config soda-configuration.yaml
