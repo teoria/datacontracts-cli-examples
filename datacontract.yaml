@@ -15,4 +15,4 @@ schema:
         columns:
           - name: my_column
             data_type: text
-            description: "contains valuesxxxxxx"
+            description: "contains values"
