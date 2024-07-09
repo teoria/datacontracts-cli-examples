@@ -18,4 +18,4 @@ jobs:
           curl -L https://github.com/datacontract/cli/releases/download/v0.4.0/datacontract-v0.4.0-linux-amd64.tar.gz -o datacontract.tar.gz
           tar -xf datacontract.tar.gz
       - name: Check data quality
-        run: ./datacontract test --soda-config soda-configuration.yaml
+        run: ./datacontract test #--soda-config soda-configuration.yaml
