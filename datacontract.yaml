@@ -16,3 +16,6 @@ schema:
           - name: my_column
             data_type: text
             description: "contains values"
+          - name: my_column2
+            data_type: text
+            description: "new column"
