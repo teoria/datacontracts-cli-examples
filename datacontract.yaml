@@ -13,7 +13,7 @@ schema:
         config:
           materialized: table
         columns:
-          - name: my_column
+          - name: my_column_1
             data_type: text
             description: "contains values"
           - name: my_column2
