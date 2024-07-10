@@ -13,9 +13,9 @@ schema:
         config:
           materialized: table
         columns:
-          - name: my_column_1
+          - name: my_column
             data_type: text
-            description: "contains values"
+            description: "contains valueshugfdsssfghj"
           - name: my_column2
             data_type: text
             description: "new column"
